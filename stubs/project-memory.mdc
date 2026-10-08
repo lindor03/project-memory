@@ -1,0 +1,18 @@
+# Project memory
+
+Brief from this application's project memory before editing application code.
+
+```bash
+php artisan ai:doctor --json
+php artisan ai:rules --json
+php artisan ai:overview --json
+php artisan ai:context <module> --json
+php artisan ai:symbol "<symbol>" --json
+php artisan ai:impact "<symbol>" --json
+```
+
+Source code outranks the index. Use a dedicated project-memory database connection configured for this application only. Do not point it at the application database.
+
+Laravel Boost is optional. When it is installed, use Boost `search-docs` for official framework documentation and Project Memory for this application's code, modules, and architectural knowledge. Do not copy framework documentation into the memory database.
+
+If `ai:doctor` fails, read the source files the task names.

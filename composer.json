@@ -1,0 +1,53 @@
+{
+    "name": "starter/project-memory",
+    "description": "Local-first project memory and code intelligence for Laravel applications.",
+    "keywords": ["laravel", "mcp", "code-intelligence", "project-memory"],
+    "type": "library",
+    "license": "MIT",
+    "version": "1.3.0",
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-tokenizer": "*",
+        "illuminate/console": "^12.0",
+        "illuminate/database": "^12.0",
+        "illuminate/support": "^12.0",
+        "nikic/php-parser": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^11.5"
+    },
+    "suggest": {
+        "laravel/boost": "Optional. Search official Laravel documentation with Boost. Project Memory does not require it and does not index framework docs."
+    },
+    "autoload": {
+        "psr-4": {
+            "ProjectMemory\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ProjectMemory\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/project-memory-mcp.php"
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ProjectMemory\\ProjectMemoryServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
