@@ -1,5 +1,5 @@
 {
-    "name": "starter/project-memory",
+    "name": "lindor03/project-memory",
     "description": "Local-first project memory and code intelligence for Laravel applications.",
     "keywords": ["laravel", "mcp", "code-intelligence", "project-memory"],
     "type": "library",

@@ -21,7 +21,7 @@ while ($root !== '' && $root !== dirname($root) && ! is_file($root.DIRECTORY_SEP
     $guard++;
 }
 if (! is_file($root.DIRECTORY_SEPARATOR.'artisan') || ! is_file($root.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php')) {
-    fwrite(STDERR, "Run the benchmark from a Laravel application that installs starter/project-memory, or set PROJECT_MEMORY_APP_ROOT.\n");
+    fwrite(STDERR, "Run the benchmark from a Laravel application that installs lindor03/project-memory, or set PROJECT_MEMORY_APP_ROOT.\n");
     exit(1);
 }
 require $root.'/vendor/autoload.php';

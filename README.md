@@ -1,4 +1,4 @@
-# starter/project-memory
+# lindor03/project-memory
 
 Local-first code intelligence for Laravel. The package indexes one application into that application's own database: modules, symbols, dependencies, architectural knowledge, change history, index runs, and retrieval metrics. Source code stays authoritative. The index is advisory. No LLM, embedding provider, or Laravel Boost installation is required.
 
@@ -21,7 +21,7 @@ From the consuming application:
 
 ```bash
 composer config repositories.project-memory path /absolute/or/relative/path/to/project-memory
-composer require starter/project-memory:^1.3
+composer require lindor03/project-memory:^1.3
 ```
 
 Composer path repositories symlink or junction the package. Each application still gets its own index database.
@@ -38,7 +38,7 @@ In the consuming application, point Composer at the private repository and requi
 
 ```bash
 composer config repositories.project-memory vcs git@example.com:example/project-memory.git
-composer require starter/project-memory:^1.3
+composer require lindor03/project-memory:^1.3
 ```
 
 Use the real Git URL only after a remote exists. Do not commit credentials.
@@ -127,7 +127,7 @@ php artisan ai:sync --json
 The benchmark script boots whichever Laravel application contains the current working directory, or `PROJECT_MEMORY_APP_ROOT`. It uses an in-memory SQLite database and generated files under the system temp directory:
 
 ```bash
-php vendor/starter/project-memory/bin/benchmark.php 100
+php vendor/lindor03/project-memory/bin/benchmark.php 100
 ```
 
 ## MCP and Cursor
@@ -181,7 +181,7 @@ When Boost is installed:
 ## Upgrade
 
 ```bash
-composer update starter/project-memory
+composer update lindor03/project-memory
 php artisan project-memory:install --migrate
 php artisan ai:doctor --json
 ```
@@ -191,7 +191,7 @@ php artisan ai:doctor --json
 ## Rollback
 
 1. Restore the memory-database backup taken before the upgrade, especially `ai_knowledge` and `ai_change_sets`.
-2. Require the previously verified package tag, for example `composer require starter/project-memory:1.3.0` once that tag exists.
+2. Require the previously verified package tag, for example `composer require lindor03/project-memory:1.3.0` once that tag exists.
 3. Prefer the backup over `php artisan migrate:rollback`. The edge-provenance migration refuses to roll back when duplicate declaration relationships exist, because dropping those columns would discard evidence. The `down` method also drops the extraction cache.
 
 There is no supported automatic downgrade that rewrites knowledge into an older shape.
